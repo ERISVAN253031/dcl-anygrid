@@ -394,7 +394,7 @@ const DclForm = () => {
                 placeholder="Descrição"
                 value={item.descricao}
                 onChange={(e) => handleItemChange(index, "descricao", e.target.value)}
-                maxLength={18} // Limitar a 50 caracteres
+                maxLength={15} // Limitar  caracteres
               />
 
               <input
