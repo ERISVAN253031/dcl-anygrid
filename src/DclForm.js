@@ -197,11 +197,17 @@ const DclForm = () => {
       const itemYPosition = yPosition;
 
       page.drawText(item.quantidade || "", { x: 60, y: itemYPosition, size: fontSize, font: fontRegular });
-      page.drawText(item.descricao || "", { x: 180, y: itemYPosition, size: fontSize, font: fontRegular });
+
+      // Quebra de linha para descrição
+      const descriptionLines = splitTextToFit(item.descricao || "", fontRegular, fontSize, 130);
+      descriptionLines.forEach((line, i) => {
+        page.drawText(line, { x: 180, y: itemYPosition - i * 15, size: fontSize, font: fontRegular });
+      });
+
       page.drawText(item.codigoProduto || "", { x: 320, y: itemYPosition, size: fontSize, font: fontRegular });
       page.drawText(item.peso || "", { x: 450, y: itemYPosition, size: fontSize, font: fontRegular });
 
-      yPosition -= 30;
+      yPosition -= Math.max(descriptionLines.length, 1) * 15 + 30; // Atualiza a posição Y para o próximo item
     });
 
     // Valor Simbólico
@@ -363,31 +369,32 @@ const DclForm = () => {
         />
       </div>
 
-  <div className="section">
-    <h2>Itens</h2>
-    <div className="item-table">
-      <div className="item-row header">
-        <div>Quantidade</div>
-        <div>Descrição</div>
-        <div>Código Produto</div>
-        <div>Peso</div>
-      </div>
-      {itens.map((item, index) => (
-<div key={index} className="item-row">
-    <InputMask
-        mask="999"
-        maskChar={null}
-        placeholder="Quantidade"
-        value={item.quantidade}
-        onChange={(e) =>
-            handleItemChange(index, "quantidade", e.target.value)
-        }
-    />
-   <input
+      <div className="section">
+        <h2>Itens</h2>
+        <div className="item-table">
+          <div className="item-row header">
+            <div>Quantidade</div>
+            <div>Descrição</div>
+            <div>Código Produto</div>
+            <div>Peso</div>
+          </div>
+          {itens.map((item, index) => (
+            <div key={index} className="item-row">
+              <InputMask
+                mask="999"
+                maskChar={null}
+                placeholder="Quantidade"
+                value={item.quantidade}
+                onChange={(e) =>
+                  handleItemChange(index, "quantidade", e.target.value)
+                }
+              />
+       <input
                 type="text"
                 placeholder="Descrição"
                 value={item.descricao}
                 onChange={(e) => handleItemChange(index, "descricao", e.target.value)}
+                maxLength={18} // Limitar a 50 caracteres
               />
 
               <input
@@ -395,6 +402,7 @@ const DclForm = () => {
                 placeholder="Código Produto"
                 value={item.codigoProduto}
                 onChange={(e) => handleItemChange(index, "codigoProduto", e.target.value)}
+                maxLength={15}
               />
 
               <InputMask
