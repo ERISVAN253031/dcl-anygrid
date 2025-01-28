@@ -13,15 +13,21 @@ const DclForm = () => {
   const [bairroRemetente, setBairroRemetente] = useState("");
   const [cepRemetente, setCepRemetente] = useState("");
   const [contatoRemetente, setContatoRemetente] = useState("");
-  const [destinatario, setDestinatario] = useState("ANYGRID SOLAR SERVICE LTDA");
+  const [destinatario, setDestinatario] = useState(
+    "ANYGRID SOLAR SERVICE LTDA"
+  );
   const [cnpjDestinatario, setCnpjDestinatario] = useState("41915230000168");
   const [cidadeDestinatario, setCidadeDestinatario] = useState("Santo André");
   const [ufDestinatario, setUfDestinatario] = useState("SP");
-  const [enderecoDestinatario, setEnderecoDestinatario] = useState("R. Jorge Velho, 105");
+  const [enderecoDestinatario, setEnderecoDestinatario] = useState(
+    "R. Jorge Velho, 105"
+  );
   const [bairroDestinatario, setBairroDestinatario] = useState("Campestre");
   const [cepDestinatario, setCepDestinatario] = useState("09080570");
   const [contatoDestinatario, setContatoDestinatario] = useState("3232269382");
-  const [itens, setItens] = useState([{ quantidade: "", descricao: "", codigoProduto: "", peso: "" }]);
+  const [itens, setItens] = useState([
+    { quantidade: "", descricao: "", codigoProduto: "", peso: "" },
+  ]);
   const [valorSimbolico, setValorSimbolico] = useState("");
   const [tipoRemetente, setTipoRemetente] = useState("fisica"); // 'fisica' ou 'juridica'
 
@@ -68,7 +74,10 @@ const DclForm = () => {
   };
 
   const addItem = () => {
-    setItens([...itens, { quantidade: "", descricao: "", codigoProduto: "", peso: "" }]);
+    setItens([
+      ...itens,
+      { quantidade: "", descricao: "", codigoProduto: "", peso: "" },
+    ]);
   };
 
   const removeItem = (index) => {
@@ -121,47 +130,136 @@ const DclForm = () => {
     });
     yPosition += 30;
 
-    drawCenteredText(page, "DECLARAÇÃO PARA TRANSPORTE DE MERCADORIA", yPosition, 18, { regular: fontBold, bold: fontBold });
+    drawCenteredText(
+      page,
+      "DECLARAÇÃO PARA TRANSPORTE DE MERCADORIA",
+      yPosition,
+      18,
+      { regular: fontBold, bold: fontBold }
+    );
     yPosition -= 30;
-    drawCenteredText(page, "AnyGrid", yPosition, 20, { regular: fontBold, bold: fontBold });
+    drawCenteredText(page, "AnyGrid", yPosition, 20, {
+      regular: fontBold,
+      bold: fontBold,
+    });
     yPosition -= 40;
 
     // Remetente
-    page.drawText("Remetente:", { x: 60, y: yPosition, size: fontSize, font: fontBold });
+    page.drawText("Remetente:", {
+      x: 60,
+      y: yPosition,
+      size: fontSize,
+      font: fontBold,
+    });
     yPosition -= 15;
-    page.drawText(`Nome: ${remetente || ""}`, { x: 60, y: yPosition, size: fontSize, font: fontRegular });
+    page.drawText(`Nome: ${remetente || ""}`, {
+      x: 60,
+      y: yPosition,
+      size: fontSize,
+      font: fontRegular,
+    });
     yPosition -= 15;
-    page.drawText(`CPF/CNPJ: ${cnpjRemetente || ""}`, { x: 60, y: yPosition, size: fontSize, font: fontRegular });
+    page.drawText(`CPF/CNPJ: ${cnpjRemetente || ""}`, {
+      x: 60,
+      y: yPosition,
+      size: fontSize,
+      font: fontRegular,
+    });
     yPosition -= 15;
-    page.drawText(`Cidade: ${cidadeRemetente || ""}  UF: ${ufRemetente || ""}`, { x: 60, y: yPosition, size: fontSize, font: fontRegular });
+    page.drawText(
+      `Cidade: ${cidadeRemetente || ""}  UF: ${ufRemetente || ""}`,
+      { x: 60, y: yPosition, size: fontSize, font: fontRegular }
+    );
     yPosition -= 15;
-    page.drawText(`Endereço: ${enderecoRemetente || ""}`, { x: 60, y: yPosition, size: fontSize, font: fontRegular });
+    page.drawText(`Endereço: ${enderecoRemetente || ""}`, {
+      x: 60,
+      y: yPosition,
+      size: fontSize,
+      font: fontRegular,
+    });
     yPosition -= 15;
-    page.drawText(`Bairro: ${bairroRemetente || ""}  CEP: ${cepRemetente || ""}`, { x: 60, y: yPosition, size: fontSize, font: fontRegular });
+    page.drawText(
+      `Bairro: ${bairroRemetente || ""}  CEP: ${cepRemetente || ""}`,
+      { x: 60, y: yPosition, size: fontSize, font: fontRegular }
+    );
     yPosition -= 15;
-    page.drawText(`Contato: ${contatoRemetente || ""}`, { x: 60, y: yPosition, size: fontSize, font: fontRegular });
+    page.drawText(`Contato: ${contatoRemetente || ""}`, {
+      x: 60,
+      y: yPosition,
+      size: fontSize,
+      font: fontRegular,
+    });
     yPosition -= 20;
 
-    page.drawRectangle({ x: 50, y: yPosition, width: 500, height: 140, borderColor: rgb(0, 0, 0), borderWidth: 1 });
+    page.drawRectangle({
+      x: 50,
+      y: yPosition,
+      width: 500,
+      height: 140,
+      borderColor: rgb(0, 0, 0),
+      borderWidth: 1,
+    });
     yPosition -= 40;
 
     // Destinatário
-    page.drawText("Destinatário:", { x: 60, y: yPosition, size: fontSize, font: fontBold });
+    page.drawText("Destinatário:", {
+      x: 60,
+      y: yPosition,
+      size: fontSize,
+      font: fontBold,
+    });
     yPosition -= 15;
-    page.drawText(`Nome: ${destinatario}`, { x: 60, y: yPosition, size: fontSize, font: fontRegular });
+    page.drawText(`Nome: ${destinatario}`, {
+      x: 60,
+      y: yPosition,
+      size: fontSize,
+      font: fontRegular,
+    });
     yPosition -= 15;
-    page.drawText(`CPF/CNPJ: ${cnpjDestinatario}`, { x: 60, y: yPosition, size: fontSize, font: fontRegular });
+    page.drawText(`CPF/CNPJ: ${cnpjDestinatario}`, {
+      x: 60,
+      y: yPosition,
+      size: fontSize,
+      font: fontRegular,
+    });
     yPosition -= 15;
-    page.drawText(`Cidade: ${cidadeDestinatario}  UF: ${ufDestinatario}`, { x: 60, y: yPosition, size: fontSize, font: fontRegular });
+    page.drawText(`Cidade: ${cidadeDestinatario}  UF: ${ufDestinatario}`, {
+      x: 60,
+      y: yPosition,
+      size: fontSize,
+      font: fontRegular,
+    });
     yPosition -= 15;
-    page.drawText(`Endereço: ${enderecoDestinatario}`, { x: 60, y: yPosition, size: fontSize, font: fontRegular });
+    page.drawText(`Endereço: ${enderecoDestinatario}`, {
+      x: 60,
+      y: yPosition,
+      size: fontSize,
+      font: fontRegular,
+    });
     yPosition -= 15;
-    page.drawText(`Bairro: ${bairroDestinatario}  CEP: ${cepDestinatario}`, { x: 60, y: yPosition, size: fontSize, font: fontRegular });
+    page.drawText(`Bairro: ${bairroDestinatario}  CEP: ${cepDestinatario}`, {
+      x: 60,
+      y: yPosition,
+      size: fontSize,
+      font: fontRegular,
+    });
     yPosition -= 15;
-    page.drawText(`Contato: ${contatoDestinatario}`, { x: 60, y: yPosition, size: fontSize, font: fontRegular });
+    page.drawText(`Contato: ${contatoDestinatario}`, {
+      x: 60,
+      y: yPosition,
+      size: fontSize,
+      font: fontRegular,
+    });
     yPosition -= 20;
 
-    page.drawRectangle({ x: 50, y: yPosition, width: 500, height: 140, borderColor: rgb(0, 0, 0), borderWidth: 1 });
+    page.drawRectangle({
+      x: 50,
+      y: yPosition,
+      width: 500,
+      height: 140,
+      borderColor: rgb(0, 0, 0),
+      borderWidth: 1,
+    });
     yPosition -= 20;
 
     const declarationText = [
@@ -175,20 +273,35 @@ const DclForm = () => {
     for (const line of declarationText) {
       const splitLines = splitTextToFit(line, fontRegular, fontSize, 500);
       for (const textLine of splitLines) {
-        page.drawText(textLine, { x: 60, y: yPosition, size: fontSize, font: fontRegular });
+        page.drawText(textLine, {
+          x: 60,
+          y: yPosition,
+          size: fontSize,
+          font: fontRegular,
+        });
         yPosition -= 15;
       }
       yPosition -= 10;
     }
 
     // Desenhar o texto "Itens"
-    page.drawText("Itens", { x: 60, y: yPosition, size: fontSize, font: fontBold });
+    page.drawText("Itens", {
+      x: 60,
+      y: yPosition,
+      size: fontSize,
+      font: fontBold,
+    });
     yPosition -= 20;
 
     // Cabeçalho da tabela de itens
     const headers = ["Quantidade", "Descrição", "Código Produto", "Peso"];
     headers.forEach((header, index) => {
-      page.drawText(header, { x: 60 + index * 130, y: yPosition, size: fontSize, font: fontBold });
+      page.drawText(header, {
+        x: 60 + index * 130,
+        y: yPosition,
+        size: fontSize,
+        font: fontBold,
+      });
     });
     yPosition -= 30;
 
@@ -196,26 +309,60 @@ const DclForm = () => {
     itens.forEach((item, index) => {
       const itemYPosition = yPosition;
 
-      page.drawText(item.quantidade || "", { x: 60, y: itemYPosition, size: fontSize, font: fontRegular });
-
-      // Quebra de linha para descrição
-      const descriptionLines = splitTextToFit(item.descricao || "", fontRegular, fontSize, 130);
-      descriptionLines.forEach((line, i) => {
-        page.drawText(line, { x: 180, y: itemYPosition - i * 15, size: fontSize, font: fontRegular });
+      page.drawText(item.quantidade || "", {
+        x: 60,
+        y: itemYPosition,
+        size: fontSize,
+        font: fontRegular,
       });
 
-      page.drawText(item.codigoProduto || "", { x: 320, y: itemYPosition, size: fontSize, font: fontRegular });
-      page.drawText(item.peso || "", { x: 450, y: itemYPosition, size: fontSize, font: fontRegular });
+      // Quebra de linha para descrição
+      const descriptionLines = splitTextToFit(
+        item.descricao || "",
+        fontRegular,
+        fontSize,
+        130
+      );
+      descriptionLines.forEach((line, i) => {
+        page.drawText(line, {
+          x: 180,
+          y: itemYPosition - i * 15,
+          size: fontSize,
+          font: fontRegular,
+        });
+      });
+
+      page.drawText(item.codigoProduto || "", {
+        x: 320,
+        y: itemYPosition,
+        size: fontSize,
+        font: fontRegular,
+      });
+      page.drawText(item.peso || "", {
+        x: 450,
+        y: itemYPosition,
+        size: fontSize,
+        font: fontRegular,
+      });
 
       yPosition -= Math.max(descriptionLines.length, 1) * 15 + 30; // Atualiza a posição Y para o próximo item
     });
 
     // Valor Simbólico
-    drawCenteredText(page, `VALOR SIMBÓLICO: ${valorSimbolico}`, yPosition, fontSize, { regular: fontBold, bold: fontBold });
+    drawCenteredText(
+      page,
+      `VALOR SIMBÓLICO: ${valorSimbolico}`,
+      yPosition,
+      fontSize,
+      { regular: fontBold, bold: fontBold }
+    );
     yPosition -= 40;
 
     // Assinatura
-    drawCenteredText(page, "Assinatura do Responsável:", yPosition, fontSize, { regular: fontRegular, bold: fontBold });
+    drawCenteredText(page, "Assinatura do Responsável:", yPosition, fontSize, {
+      regular: fontRegular,
+      bold: fontBold,
+    });
     yPosition -= 30;
 
     // Linha para preenchimento
@@ -254,7 +401,9 @@ const DclForm = () => {
           Remetente:
           <button
             onClick={() =>
-              setTipoRemetente(tipoRemetente === "fisica" ? "juridica" : "fisica")
+              setTipoRemetente(
+                tipoRemetente === "fisica" ? "juridica" : "fisica"
+              )
             }
             style={{ marginLeft: "10px", padding: "5px 10px", height: "30px" }}
           >
@@ -268,11 +417,20 @@ const DclForm = () => {
           onChange={(e) => setRemetente(e.target.value)}
         />
         <InputMask
-          mask={tipoRemetente === "fisica" ? "999.999.999-99" : "99.999.999/9999-99"}
+          mask={
+            tipoRemetente === "fisica" ? "999.999.999-99" : "99.999.999/9999-99"
+          }
           maskChar={null}
           placeholder={tipoRemetente === "fisica" ? "CPF" : "CNPJ"}
           value={cnpjRemetente}
           onChange={(e) => setCnpjRemetente(e.target.value)}
+        />
+        <InputMask
+          mask="99999-999"
+          maskChar={null}
+          placeholder="CEP"
+          value={cepRemetente}
+          onChange={handleCepChange}
         />
         <input
           type="text"
@@ -298,13 +456,7 @@ const DclForm = () => {
           value={bairroRemetente}
           onChange={(e) => setBairroRemetente(e.target.value)}
         />
-        <InputMask
-          mask="99999-999"
-          maskChar={null}
-          placeholder="CEP"
-          value={cepRemetente}
-          onChange={handleCepChange}
-        />
+
         <InputMask
           mask="(99) 99999-9999"
           maskChar={null}
@@ -328,6 +480,13 @@ const DclForm = () => {
           placeholder="CNPJ"
           value={cnpjDestinatario}
           onChange={(e) => setCnpjDestinatario(e.target.value)}
+        />
+        <InputMask
+          mask="99999-999"
+          maskChar={null}
+          placeholder="CEP"
+          value={cepDestinatario}
+          onChange={(e) => setCepDestinatario(e.target.value)}
         />
         <input
           type="text"
@@ -353,13 +512,7 @@ const DclForm = () => {
           value={bairroDestinatario}
           onChange={(e) => setBairroDestinatario(e.target.value)}
         />
-        <InputMask
-          mask="99999-999"
-          maskChar={null}
-          placeholder="CEP"
-          value={cepDestinatario}
-          onChange={(e) => setCepDestinatario(e.target.value)}
-        />
+
         <InputMask
           mask="(99) 99999-9999"
           maskChar={null}
@@ -389,19 +542,23 @@ const DclForm = () => {
                   handleItemChange(index, "quantidade", e.target.value)
                 }
               />
-       <input
+              <input
                 type="text"
                 placeholder="Descrição"
                 value={item.descricao}
-                onChange={(e) => handleItemChange(index, "descricao", e.target.value)}
-                maxLength={15} // Limitar  caracteres
+                onChange={(e) =>
+                  handleItemChange(index, "descricao", e.target.value)
+                }
+                maxLength={18} // Limitar a 50 caracteres
               />
 
               <input
                 type="text"
                 placeholder="Código Produto"
                 value={item.codigoProduto}
-                onChange={(e) => handleItemChange(index, "codigoProduto", e.target.value)}
+                onChange={(e) =>
+                  handleItemChange(index, "codigoProduto", e.target.value)
+                }
                 maxLength={15}
               />
 
@@ -410,7 +567,9 @@ const DclForm = () => {
                 maskChar={null}
                 placeholder="Peso"
                 value={item.peso}
-                onChange={(e) => handleItemChange(index, "peso", e.target.value)}
+                onChange={(e) =>
+                  handleItemChange(index, "peso", e.target.value)
+                }
               />
 
               <button
