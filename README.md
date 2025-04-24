@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# DCL AnyGrid 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bem-vindo ao projeto **DCL AnyGrid**! Esta aplicação em React permite aos usuários gerar uma **Declaração para Transporte de Mercadoria (DCL)**, oferecendo um formulário intuitivo para preenchimento das informações do remetente, destinatário e detalhes dos itens. 📄
 
-## Available Scripts
+## Funcionalidades 🌟
 
-In the project directory, you can run:
+- **Formulário Interativo**: Interface amigável para inserir dados do remetente, destinatário e itens, com campos de entrada que se adaptam ao tamanho da tela.
+- **Máscaras de Entrada**: Utilização de máscaras para garantir que as informações sejam inseridas corretamente (CNPJ, CEP, Telefone, etc.).
+- **Geração de PDF**: Criação de um PDF formatado com todas as informações preenchidas, pronto para download. 📥
+- **Validação de CEP**: Busque automaticamente informações de endereço ao inserir um CEP válido, facilitando o preenchimento.
 
-### `npm start`
+## Tecnologias Utilizadas 🛠️
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: Biblioteca popular para construção de interfaces de usuário.
+- **pdf-lib**: Biblioteca que permite a criação e manipulação de arquivos PDF.
+- **react-input-mask**: Utilizada para aplicar máscaras de entrada nos campos do formulário.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Estrutura do Código 📂
 
-### `npm test`
+O código principal do formulário está localizado no arquivo `DclForm.js`. Aqui estão alguns dos principais componentes e funções:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Estados**: Utilizamos o `useState` para gerenciar os dados do formulário, como informações do remetente, destinatário e itens.
+- **Fetch CEP**: A função `fetchCepData` busca informações de endereço a partir do CEP inserido, utilizando uma API externa.
+- **Manipulação de Itens**: Funções para adicionar, remover e atualizar os itens da lista, permitindo um gerenciamento dinâmico dos dados.
+- **Geração de PDF**: A função `generatePdf` cria um documento PDF com as informações inseridas, formatando adequadamente o conteúdo.
 
-### `npm run build`
+  ## Preencha o Formulário:
+ - **Remetente**: Insira os dados do remetente, incluindo nome, CNPJ, endereço, cidade, UF, CEP e contato.
+ - **Destinatário**: Preencha as informações do destinatário com os mesmos campos.
+ - **Itens**: Adicione os itens que serão transportados, incluindo quantidade, descrição, código do produto e peso.
+ - **Valor** Simbólico: Insira o valor simbólico do transporte.
+ - **Gerar DCL**: Clique no botão "Gerar DCL" para baixar o PDF com todas as informações.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ - ![img-sistema](https://github.com/user-attachments/assets/70156344-94c9-4c61-a20a-368b149fc7f8)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   

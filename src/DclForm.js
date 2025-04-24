@@ -373,7 +373,6 @@ const DclForm = () => {
       color: rgb(0, 0, 0),
       thickness: 1,
     });
-
     // Carregar e desenhar a imagem da assinatura
 const signatureUrl = "/ASS.PNG"; // Caminho correto para a imagem
 const signatureImageBytes = await fetch(signatureUrl).then(res => {
@@ -428,8 +427,6 @@ page.drawImage(logoImage, {
   width: logoImageDims.width,
   height: logoImageDims.height,
 });
-
-
 
 
 
