@@ -374,7 +374,7 @@ const DclForm = () => {
       thickness: 1,
     });
     // Carregar e desenhar a imagem da assinatura
-const signatureUrl = "/ASS.PNG"; // Caminho correto para a imagem
+const signatureUrl = "/ass.png"; // Caminho correto para a imagem
 const signatureImageBytes = await fetch(signatureUrl).then(res => {
   if (!res.ok) throw new Error("Erro ao carregar a imagem da assinatura");
   return res.arrayBuffer();
@@ -392,7 +392,7 @@ page.drawImage(signatureImage, {
 });
 
 // Carregar e desenhar o LOGO1
-const logo1Url = "/LOGO1.png"; // Caminho para a imagem LOGO1
+const logo1Url = "/logo1.png"; // Caminho para a imagem LOGO1
 const logo1ImageBytes = await fetch(logo1Url).then(res => {
   if (!res.ok) throw new Error("Erro ao carregar a imagem LOGO1");
   return res.arrayBuffer();
