@@ -213,7 +213,7 @@ const DclForm = () => {
       x: 60,
       y: yPosition,
       size: fontSize,
-      font: fontRegular,
+      font: fontRegular
     });
     yPosition -= 15;
     page.drawText(`CPF/CNPJ: ${cnpjDestinatario}`, {
