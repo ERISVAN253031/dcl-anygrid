@@ -619,7 +619,7 @@ page.drawImage(logoImage, {
               />
 
               <InputMask
-                mask="999,99 KG"
+                mask=" KG"
                 maskChar={null}
                 placeholder="Peso"
                 value={item.peso}
